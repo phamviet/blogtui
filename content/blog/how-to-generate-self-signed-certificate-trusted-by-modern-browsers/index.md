@@ -14,7 +14,10 @@ It's up to you to have the tool install globally by executing `sudo make install
 task i do every day, so use scripts from cloned repo directly is enough and makes more sense. These scripts are allocated in `bin` directory.
 
 ### Generate Certificate Authority
-`./ca-gen -v -c VN -s HCMC -l HCMC -o "My Company" -u "IT Department" -n "Example App" app-root.key app-root-ca.crt`
+
+```bash
+./ca-gen -v -c VN -s HCMC -l HCMC -o "My Company" -u "IT Department" -n "Example App" app-root.key app-root-ca.crt
+```
 
 On MacOS, you may encounter error "Error Loading extension section v3_ca". To fix that, use alternative openssl version instead:
 
@@ -38,7 +41,13 @@ export PATH="/usr/local/opt/openssl/bin:$PATH"
 
 Generate and sign certificate for `myapp.com` domain and all of its subdomains.
 
-`./cert-gen -c VN -s HCMC -l HCMC -o "My Company" -u "IT Department" -n "myapp.com" -a "*.myapp.com" app-root.key app-root-ca.crt myapp.com.key myapp.com.csr myapp.com.crt`
+```bash
+./cert-gen -c VN -s HCMC -l HCMC \
+-o "My Company" -u "IT Department" \
+-n "myapp.com" -a "*.myapp.com" \
+app-root.key app-root-ca.crt \
+myapp.com.key myapp.com.csr myapp.com.crt
+```
 
 #### Output
 
@@ -55,6 +64,6 @@ Generate and sign certificate for `myapp.com` domain and all of its subdomains.
  8 -rw-r--r--   1 viet  staff  1700 Apr  5 15:44 myapp.com.key
 ```
 
-`myapp.com.crt` and `myapp.com.key` are two files you may want for server configuring to have secured connection.
+`myapp.com.crt` and `myapp.com.key` are two files for server configuring to have secured setup.
 
 Next step is to import `app-root-ca.crt` to browsers you want to test the certificate. Please refer to tutorial at https://github.com/devilbox/cert-gen#import-ca-into-chrome.

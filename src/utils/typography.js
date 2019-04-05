@@ -1,5 +1,10 @@
 import Typography from "typography"
+import CodePlugin from 'typography-plugin-code'
 import Theme from "typography-theme-fairy-gates"
+
+Theme.plugins = [
+  new CodePlugin(),
+]
 
 // Theme.baseLineHeight = 1.78;
 Theme.overrideThemeStyles = () => {
