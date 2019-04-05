@@ -1,17 +1,22 @@
 import Typography from "typography"
-import Wordpress2016 from "typography-theme-wordpress-2016"
+import Theme from "typography-theme-fairy-gates"
 
-Wordpress2016.overrideThemeStyles = () => {
+// Theme.baseLineHeight = 1.78;
+Theme.overrideThemeStyles = () => {
   return {
-    "a.gatsby-resp-image-link": {
-      boxShadow: `none`,
+    blockquote: {
+      borderLeftWidth: typography.rhythm(3 / 16),
     },
+    'h3 a': {
+      // backgroundImage: 'none',
+    },
+    'h1,h2,h3,h4': {
+      lineHeight: 1.2
+    }
   }
 }
 
-delete Wordpress2016.googleFonts
-
-const typography = new Typography(Wordpress2016)
+const typography = new Typography(Theme)
 
 // Hot reload typography in development.
 if (process.env.NODE_ENV !== `production`) {
