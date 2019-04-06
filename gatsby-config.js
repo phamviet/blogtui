@@ -3,7 +3,7 @@ module.exports = {
     title: `Viet Pham`,
     author: `Viet Pham`,
     description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    siteUrl: `https://blog.phamviet.net/`,
     social: {
       twitter: `kylemathews`,
     },
@@ -72,6 +72,11 @@ module.exports = {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
       },
     },
   ],
