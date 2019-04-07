@@ -27,7 +27,7 @@ By default Bitbucket Pipelines is not enabled for every repository. Go to `Repos
 
 Pipelines uses an SSH key pair and known host information to securely connect to other services and hosts. We need to setup a key pair and register
 it with Pipelines. Once registered, SSH key pair will be passed to every Pipelines build container at `/opt/atlassian/pipelines/agent/ssh/id_rsa` and be
-used as runtime user identity by default.
+used as runtime user identity.
 
 **To generate a new SSH key pair:**
 
@@ -38,7 +38,7 @@ used as runtime user identity by default.
 
 You can use an existing key pair if your key requirements differ from the Bitbucket 2048-bit RSA keys.
 
-For security reasons, you should never add your own personal SSH key – you should use an existing bot key instead.
+For security reasons, you should never add your own personal SSH key.
 
 > 1. Any SSH key you use in Pipelines should not have a passphrase.
 > 2. Bitbucket Pipelines supports one SSH key per repository
@@ -53,14 +53,16 @@ In the repository Settings, go to SSH keys, and add the address for the known ho
 
 Host name should be in format `git-codecommit.aws-region.amazonaws.com`. For example: `git-codecommit.ap-southeast-1.amazonaws.com`.
 
-### Add the public key to IAM user
+### Add the public key to IAM user credentials
+
+In order to Codecommit accept request from Pipelines, the public key must be registered as IAM user credentials who has assess to Codecommit repository.
 
 Login as IAM user. Go to `My security credentials` and upload SSH public key in `AWS CodeCommit credentials` tab. Once you uploaded public key,
 let's note down the **SSH key ID**, so it can be used on next step.
 
 ### Compose `bitbucket-pipelines.yml`
 
-Below is a minimal script to mirror content from Bitbucket to Codecommit repository.
+Below is minimal script to upload content from Bitbucket to Codecommit.
 
 ```yaml
 image: 'atlassian/default-image:2'
