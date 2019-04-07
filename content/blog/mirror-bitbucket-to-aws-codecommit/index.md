@@ -47,7 +47,7 @@ For security reasons, you should never add your own personal SSH key.
 
 Pipelines provides a way for you to store, and inspect, the fingerprint of a remote host, along with the host address. This allows you to visually verify that the public key presented by a remote host actually matches the identity of that host, to help you detect spoofing and man-in-the-middle attacks. It also means that future communications with that host can be automatically verified.
 
-In the repository Settings, go to SSH keys, and add the address for the known host. Click Fetch to see the host's fingerprint:
+In the repository **Settings**, go to **SSH keys**, and add the address for the known host. Click **Fetch** to see the host's fingerprint:
 
 ![Pipelines Known Hosts](./pipelines-known-hosts.png)
 
