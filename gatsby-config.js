@@ -3,9 +3,9 @@ module.exports = {
     title: `Viet Pham`,
     author: `Viet Pham`,
     description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://blog.phamviet.net/`,
+    siteUrl: `https://readme.phamviet.net/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `phthviet`,
     },
   },
   plugins: [
@@ -57,8 +57,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Viet Pham Readme`,
+        short_name: `Readme`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,

@@ -38,7 +38,7 @@ function Bio() {
               }}
             />
             <p>
-              Written by <strong>{author}</strong> who lives and works in Ho Chi Minh, Vietnam.
+              Written by <strong>{author}</strong>.
             </p>
           </div>
         )
