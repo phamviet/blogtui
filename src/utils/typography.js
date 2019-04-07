@@ -17,6 +17,9 @@ Theme.overrideThemeStyles = () => {
     },
     'h1,h2,h3,h4': {
       lineHeight: 1.2
+    },
+    'pre[class*=language-]': {
+      background: 'hsla(0,0%,0%,0.04)'
     }
   }
 }
